@@ -9,7 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "PathFinder needs your location to track your route.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "PathFinder needs your location to track your route even when the app is in the background."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +23,13 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE"
+      ]
     },
     "web": {
       "output": "static",
@@ -40,6 +50,9 @@
         }
       ]
     ],
+    "extra": {
+      "mapTilerKey": "PUT_YOUR_MAPTILER_KEY_HERE"
+    },
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true

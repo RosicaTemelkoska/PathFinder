@@ -59,6 +59,9 @@ export default function HomeScreen() {
             </Link.Menu>
           </Link.Menu>
         </Link>
+        <Link href="/map">
+          <ThemedText type="subtitle">Go to Map</ThemedText>
+        </Link>
 
         <ThemedText>
           {`Tap the Explore tab to learn more about what's included in this starter app.`}

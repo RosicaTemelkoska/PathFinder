@@ -30,6 +30,23 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="map"   // must match the file name "map.tsx"
+        options={{ title: 'Map' }}
+      />
+      <Tabs.Screen
+        name="history"
+        options={{
+          title: 'History',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="clock.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="history-detail"
+        options={{
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

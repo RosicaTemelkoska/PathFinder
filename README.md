@@ -1,50 +1,43 @@
-# Welcome to your Expo app 👋
+# PathFinder (Expo / React Native)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+PathFinder is a mobile app that tracks your movement in real time, draws your route on a map, saves activities locally, and lets you review past activities with a detail map view.
 
-## Get started
+## How to run
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. Install dependencies:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Add your MapTiler key:
 
-## Learn more
+- Open `app.json`
+- Set `expo.extra.mapTilerKey` to your MapTiler API key (replace `PUT_YOUR_MAPTILER_KEY_HERE`)
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Start the app:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+Then open in Expo Go / emulator / device as usual.
 
-Join our community of developers creating universal apps.
+## What’s implemented
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **Real-time tracking**: foreground location permission, live GPS tracking, route polyline, duration, and distance estimate (Haversine).
+- **Background tracking (optional upgrade)**: uses `expo-task-manager` + `expo-location` background updates to keep recording when the app is minimized (requires background permission).
+- **Persistence**: saved activities (date, duration, distance, coordinate array) in AsyncStorage.
+- **History + detail**: list of recordings + detail screen that re-renders the saved polyline on a static map.
+- **Map provider**: MapTiler tiles rendered via `UrlTile` in `react-native-maps`.
+- **Styling**: `styled-components` for a polished, consistent UI on Map/History/Detail screens.
+
+## AI tools used (and how)
+
+- **Cursor (AI-assisted editing)**: refactors across screens, TypeScript fixes (timers + interval typing), and quick iteration on UI polish.
+- **ChatGPT-style prompting**: used to reason about Expo Router edge cases, map tile integration patterns, and permission handling flows.
+
+## Biggest challenge during “vibe coding”
+
+Getting the types + runtime behavior consistent across environments (React Native vs Node timer typings, and map tile/provider behavior) while still keeping the UI fluid and the codebase clean.
+
