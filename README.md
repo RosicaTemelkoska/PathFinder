@@ -4,24 +4,34 @@ PathFinder is a mobile app that tracks your movement in real time, draws your ro
 
 ## How to run
 
-1. Install dependencies:
+1. Clone the repository:
 
-```bash
+git clone https://github.com/YOUR-USERNAME/pathfinder.git
+cd pathfinder
+
+2. Install dependencies:
+
 npm install
-```
 
-2. Add your MapTiler key:
+3. Add your MapTiler key:
 
 - Open `app.json`
 - Set `expo.extra.mapTilerKey` to your MapTiler API key (replace `PUT_YOUR_MAPTILER_KEY_HERE`)
 
-3. Start the app:
+4. Start the app:
 
-```bash
 npx expo start
-```
 
 Then open in Expo Go / emulator / device as usual.
+
+## Tech Stack
+
+- React Native (Expo)
+- Expo Router
+- react-native-maps
+- expo-location
+- AsyncStorage
+- styled-components
 
 ## What’s implemented
 
@@ -35,9 +45,23 @@ Then open in Expo Go / emulator / device as usual.
 ## AI tools used (and how)
 
 - **Cursor (AI-assisted editing)**: refactors across screens, TypeScript fixes (timers + interval typing), and quick iteration on UI polish.
-- **ChatGPT-style prompting**: used to reason about Expo Router edge cases, map tile integration patterns, and permission handling flows.
+- **ChatGPT**: used to:
+  - Debug Expo Router navigation issues  
+  - Implement GPS tracking logic  
+  - Handle permissions and edge cases  
+
+AI tools helped accelerate development and solve complex problems faster.
 
 ## Biggest challenge during “vibe coding”
 
 Getting the types + runtime behavior consistent across environments (React Native vs Node timer typings, and map tile/provider behavior) while still keeping the UI fluid and the codebase clean.
 
+Another challenge was handling navigation with Expo Router (especially dynamic routes like history-detail) and ensuring everything worked smoothly together.
+
+## Final Notes
+
+This project demonstrates:
+- Real-time GPS tracking
+- Clean navigation structure
+- Local data persistence
+- Effective use of AI-assisted development
