@@ -6,7 +6,7 @@ PathFinder is a mobile app that tracks your movement in real time, draws your ro
 
 1. Clone the repository:
 
-git clone https://github.com/YOUR-USERNAME/pathfinder.git
+git clone https://github.com/RosicaTemelkoska/PathFinder.git
 cd pathfinder
 
 2. Install dependencies:
